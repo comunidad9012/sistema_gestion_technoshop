@@ -16,6 +16,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface EjemplaresRepository extends JpaRepository<Ejemplares,EjemplaresID>{
-    @Query(value="SELECT COUNT(*) FROM okshop.productos WHERE id = ?1;")
-    Integer countById(int id);
+    //@Query(value="SELECT COUNT(*) FROM okshop.productos WHERE id = ?1;")
+    //int countById(int id);
 }
