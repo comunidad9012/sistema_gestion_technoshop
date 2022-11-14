@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>Agregar proveedor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Agregar proveedor</h1>
+        </div>
+        <div id="contenedor">
+            <div id="Formulario">
+                <form name="miForm" th:action="@{/proveedores/altaproveedores}" method="post">
+                    <label for="cuit">CUIT</label>
+                    <input type="text" name="cuit" id="cuit"/>
+                    <br/>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre"/>
+                    <br/>
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email"/>
+                    <br/>
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" name="telefono" id="telefono"/>
+                    <br>
+                    <label for="direccion">Dirección</label>
+                    <input type="text" name="direccion" id="direccion"/>
+                    <br>
+                    <input type="submit" name="submit" value="Agregar"/>
+                </form>
+                <br>
+                <a th:href="@{/proveedores}">Volver</a>
+            </div>
+        </div>
+    </body>
+</html>
+

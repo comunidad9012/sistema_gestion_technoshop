@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>Modificar producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Modificar producto</h1>
+        </div>
+        <div id="contenedor">
+            <div id="Formulario">
+                <form name="miForm" th:action="@{/productos/updateproductos}" method="post">
+                    <label for="cuit">ID</label>
+                    <input type="text" name="id" id="id" th:value="${FUProducto.id}" readonly/>
+                    <br/>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" th:value="${FUProducto.nombre}"/>
+                    <br/>
+                    <label for="marca">Marca</label>
+                    <input type="text" name="marca" id="marca" th:value="${FUProducto.marca}"/>
+                    <br>
+                    <label for="categoria">Categoría</label>
+                    <input type="text" name="categoria" id="categoria" th:value="${FUProducto.categoria}"/>
+                    <br>
+                    <input type="submit" name="submit" value="Modificar"/>
+                </form>
+                <br>
+                <a th:href="@{/productos}">Volver</a>
+            </div>
+        </div>
+    </body>
+</html>
+

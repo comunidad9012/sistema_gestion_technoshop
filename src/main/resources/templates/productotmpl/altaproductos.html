@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>Agregar productos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Agregar productos</h1>
+        </div>
+        <div id="contenedor">
+            <div id="Formulario">
+                <form name="miForm" th:action="@{/productos/altaproducto}" method="post">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre"/>
+                    <br/>
+                    <label for="marca">Marca</label>
+                    <input type="text" name="marca" id="marca"/>
+                    <br>
+                    <label for="categoria">Categoría</label>
+                    <input type="text" name="categoria" id="categoria"/>
+                    <br>
+                    <input type="submit" name="submit" value="Agregar"/>
+                </form>
+                <br>
+                <a th:href="@{/productos}">Volver</a>
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Productos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <a th:href="@{/}">Volver al menú</a>
+    <br>
+    <body>
+        <h1>Lista de productos</h1>
+        <table border="1">
+            <tr>
+                <th>Id_Producto</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>N° de Ejemplares</th>
+                <th>Categoría</th>
+                <th colspan="2">Funciones</th>
+            </tr>
+            <tr th:each="productos:${productos}">
+                <td th:text="${productos.id}"></td>
+                <td th:text="${productos.nombre}"></td>
+                <td th:text="${productos.marca}"></td>
+                <td th:text="${productos.nro_ejemplares}"></td>
+                <td th:text="${productos.categoria}"></td>
+                <td><a th:href="@{/productos/updateproductosform/{id} (id=${productos.id}) }">Editar</a></td>
+                <td><a th:href="@{/productos/deleteproductos/{id} (id=${productos.id}) }">Eliminar</a></td>
+            </tr>
+        </table>
+        <br>
+        <a th:href="@{/productos/altaproductoform}">Agregar producto</a>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>Agregar personal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Agregar personal</h1>
+        </div>
+        <div id="contenedor">
+            <div id="Formulario">
+                <form name="miForm" th:action="@{/personal/altapersonal}" method="post">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni"/>
+                    <br/>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre"/>
+                    <br/>
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" name="telefono" id="telefono"/>
+                    <br>
+                    <label for="contrasena">Contraseña</label>
+                    <input type="text" name="contrasena" id="contrasena"/>
+                    <br>
+                    <input type="submit" name="submit" value="Agregar"/>
+                </form>
+                <br>
+                <a th:href="@{/personal}">Volver</a>
+            </div>
+        </div>
+    </body>
+</html>

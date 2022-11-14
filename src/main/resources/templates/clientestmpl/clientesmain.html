@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Clientes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <a th:href="@{/}">Volver al menú</a>
+    <br>
+    <body>
+        <h1>Lista de Clientes</h1>
+        <table border="1">
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>E-Mail</th>
+                <th colspan="2">Funciones</th>
+            </tr>
+            <tr th:each="clientes:${clientes}">
+                <td th:text="${clientes.dni}"></td>
+                <td th:text="${clientes.nombre}"></td>
+                <td th:text="${clientes.telefono}"></td>
+                <td th:text="${clientes.email}"></td>
+                <td><a th:href="@{/clientes/updateclienteform/{id} (id=${clientes.dni}) }">Editar</a></td>
+                <td><a th:href="@{/clientes/deletecliente/{id} (id=${clientes.dni}) }">Eliminar</a></td>
+            </tr>
+        </table>
+        <br>
+        <a th:href="@{/clientes/altaclientesform}">Agregar cliente</a>
+    </body>
+</html>
